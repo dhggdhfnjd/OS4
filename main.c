@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>
-#include"b.h"
 
 int read_line(int fd, char *word) {
 	*word = '\0';
