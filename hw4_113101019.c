@@ -205,7 +205,7 @@ void *malloc(size_t size)
     size_t origin_space = love->size;
     size_t leftover = origin_space - space;
     
-    if (leftover >= sizeof(struct header) + 32) 
+    if (leftover >= sizeof(struct header)) 
     {
         love->size = space;
         love->status = 1;  
