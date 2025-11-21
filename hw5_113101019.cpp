@@ -127,8 +127,8 @@ int main(int argc, char* argv[]) {
         all.push_back(f);
     }
     infile.close();
-    cout << "LRU policy:" << endl;
-    cout << "Frame\tHit\t\tMiss\t\tPage fault ratio\tWrite back count\n" ;
+    cout << "LRU policy:\n";
+    cout << "Frame\tHit\t\tMiss\t\tPage fault ratio\tWrite back count\n";
     struct timeval start, end;
     gettimeofday(&start, NULL);
     for(int i:space)
@@ -202,16 +202,15 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
-        cout << i << "\t" << hit << "\t"  << miss << "\t\t"  << fixed << setprecision(10) << (double)miss / all.size() << "\t\t"  << wbc << endl;    
+        cout << i << "\t" << hit << "\t"  << miss << "\t\t"  << fixed << setprecision(10) << (double)miss / all.size() << "\t\t"  << wbc << "\n";    
     }
     gettimeofday(&end, NULL);
     
-    double elapsed = (end.tv_sec - start.tv_sec) + 
-                     (end.tv_usec - start.tv_usec) / 1000000.0;
+    double elapsed = (end.tv_sec - start.tv_sec) +  (end.tv_usec - start.tv_usec) / 1000000.0;
 
-    cout << "Elapsed time: " << fixed << setprecision(6) << elapsed << " sec" << endl<<endl;
+    cout << "Elapsed time: " << fixed << setprecision(6) << elapsed << " sec\n\n";
 
-    cout << "CFLRU policy:" << endl;
+    cout << "CFLRU policy:\n";
     cout << "Frame\tHit\t\tMiss\t\tPage fault ratio\tWrite back count\n" ;
     struct timeval start1, end1;
     gettimeofday(&start1, NULL);
@@ -319,12 +318,9 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
-        cout << i << "\t" << hit1 << "\t"  << miss1 << "\t\t"  << fixed << setprecision(10) << (double)miss1 / all.size() << "\t\t"  << wbc1 << endl;    
+        cout << i << "\t" << hit1 << "\t"  << miss1 << "\t\t"  << fixed << setprecision(10) << (double)miss1 / all.size() << "\t\t"  << wbc1 << "\n";    
     }
     gettimeofday(&end1, NULL);
-    
-    double elapsed1 = (end1.tv_sec - start1.tv_sec) + 
-                     (end1.tv_usec - start1.tv_usec) / 1000000.0;
-
-    cout << "Elapsed time: " << fixed << setprecision(6) << elapsed1 << " sec" << endl<<endl;
+    double elapsed1 = (end1.tv_sec - start1.tv_sec) + (end1.tv_usec - start1.tv_usec) / 1000000.0;
+    cout << "Elapsed time: " << fixed << setprecision(6) << elapsed1 << " sec\n\n";
 }
