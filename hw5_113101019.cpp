@@ -222,12 +222,13 @@ int main(int argc, char* argv[]) {
         uint64_t hit1 = 0,byte_offset1;
         uint64_t miss1 = 0;
         uint64_t wbc1 = 0;
-        uint64_t total_count1 = 0,clean_count=i/4;
+        uint64_t total_count1 = 0,clean_count;
         Cache* head1 = NULL;  
         Cache* tail1 = NULL;  
         string op1;
         for(pair<string,uint64_t> k:all)
         {
+            clean_count = total_count1/4;
             op1=k.first;
             byte_offset1 = k.second;
             long long addr = byte_offset1;  
